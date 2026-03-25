@@ -1,0 +1,86 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "automergeStrategy": "rebase",
+    "automergeType": "pr",
+    "git-submodules": {
+        "enabled": true,
+        "packageRules": [
+            {
+                "addLabels": [
+                    "approved",
+                    "lgtm"
+                ],
+                "additionalBranchPrefix": "telco5g-konflux-",
+                "autoApprove": true,
+                "automerge": true,
+                "matchFileNames": [
+                    "telco5g-konflux/**"
+                ],
+                "schedule": [
+                    "at any time"
+                ]
+            },
+            {
+                "addLabels": [
+                    "approved",
+                    "lgtm"
+                ],
+                "additionalBranchPrefix": "oran-o2ims-",
+                "autoApprove": true,
+                "automerge": true,
+                "matchFileNames": [
+                    "bundles/*/oran-o2ims/**"
+                ],
+                "schedule": [
+                    "at any time"
+                ]
+            }
+        ]
+    },
+    "packageRules": [
+        {
+            "addLabels": [
+                "approved",
+                "lgtm"
+            ],
+            "autoApprove": true,
+            "automerge": true,
+            "enabled": true,
+            "ignoreTests": false,
+            "includePaths": [
+                "bundles/**",
+                "catalog/**"
+            ],
+            "matchManagers": [
+                "custom.regex"
+            ],
+            "matchUpdateTypes": [
+                "digest"
+            ],
+            "platformAutomerge": true,
+            "schedule": [
+                "at any time"
+            ]
+        },
+        {
+            "enabled": false,
+            "matchUpdateTypes": [
+                "minor"
+            ]
+        }
+    ],
+    "prConcurrentLimit": 0,
+    "pruneBranchAfterAutomerge": true,
+    "tekton": {
+        "enabled": true,
+        "ignoreTests": false,
+        "includePaths": [
+            "bundles/**/tekton/**",
+            "catalog/**/tekton/**"
+        ],
+        "managerFilePatterns": [
+            "/\\.yaml$/",
+            "/\\.yml$/"
+        ]
+    }
+}

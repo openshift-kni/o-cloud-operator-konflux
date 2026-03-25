@@ -1,0 +1,4 @@
+---
+resources:
+  - "o-cloud-manager-fbc-base.yaml"
+  - "o-cloud-manager-channel-0-1.yaml"

@@ -1,0 +1,8 @@
+[submodule "telco5g-konflux"]
+	path = telco5g-konflux
+	url = https://github.com/by2waysprojects/telco5g-konflux.git
+	branch = CNF-22415-add-build-multi-catalog
+[submodule "bundles/v0.1/oran-o2ims"]
+	path = bundles/v0.1/oran-o2ims
+	url = https://github.com/openshift-kni/oran-o2ims.git
+	branch = main

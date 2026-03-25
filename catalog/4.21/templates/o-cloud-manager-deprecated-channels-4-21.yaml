@@ -1,0 +1,101 @@
+---
+# Channel entries for 'stable' channel
+- entries:
+    # v4.21.0
+    - name: o-cloud-manager.v4.21.0
+      skipRange: '>=4.9.0 <4.21.0'
+    # v4.21.1
+    - name: o-cloud-manager.v4.21.1
+      replaces: o-cloud-manager.v4.21.0
+      skipRange: '>=4.9.0 <4.21.1'
+    # v4.21.2
+    - name: o-cloud-manager.v4.21.2
+      replaces: o-cloud-manager.v4.21.1
+      skipRange: '>=4.9.0 <4.21.2'
+    # v4.21.3
+    - name: o-cloud-manager.v4.21.3
+      replaces: o-cloud-manager.v4.21.2
+      skipRange: '>=4.9.0 <4.21.3'
+    # v4.21.4
+    - name: o-cloud-manager.v4.21.4
+      replaces: o-cloud-manager.v4.21.3
+      skipRange: '>=4.9.0 <4.21.4'
+    # v4.21.5
+    - name: o-cloud-manager.v4.21.5
+      replaces: o-cloud-manager.v4.21.4
+      skipRange: '>=4.9.0 <4.21.5'
+  name: stable
+  package: o-cloud-manager
+  schema: olm.channel
+# Channel entries for '4.21' channel
+- entries:
+    # v4.21.0
+    - name: o-cloud-manager.v4.21.0
+      skipRange: '>=4.9.0 <4.21.0'
+    # v4.21.1
+    - name: o-cloud-manager.v4.21.1
+      replaces: o-cloud-manager.v4.21.0
+      skipRange: '>=4.9.0 <4.21.1'
+    # v4.21.2
+    - name: o-cloud-manager.v4.21.2
+      replaces: o-cloud-manager.v4.21.1
+      skipRange: '>=4.9.0 <4.21.2'
+    # v4.21.3
+    - name: o-cloud-manager.v4.21.3
+      replaces: o-cloud-manager.v4.21.2
+      skipRange: '>=4.9.0 <4.21.3'
+    # v4.21.4
+    - name: o-cloud-manager.v4.21.4
+      replaces: o-cloud-manager.v4.21.3
+      skipRange: '>=4.9.0 <4.21.4'
+    # v4.21.5
+    - name: o-cloud-manager.v4.21.5
+      replaces: o-cloud-manager.v4.21.4
+      skipRange: '>=4.9.0 <4.21.5'
+  name: "4.21"
+  package: o-cloud-manager
+  schema: olm.channel
+# v4.21.0 bundle
+- image: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle@sha256:1a6e85788354257b0ea516d12583636489683eb7c24c06894010b0f6d718e35c
+  schema: olm.bundle
+# v4.21.1 bundle
+- image: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle@sha256:b288271e64680a48c33a4af055ec3efa3885eb9aca62f3e767021b90dd39e0bc
+  schema: olm.bundle
+# v4.21.2 bundle
+- image: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle@sha256:7ef59628b50f7fde127445b27ff95af1b3fccf9efee678bb2ca5587ef1c79d1f
+  schema: olm.bundle
+# v4.21.3 bundle
+- image: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle@sha256:c3f7f016662084afd9560919394d66b033aaa9b8847742cc13c4de15b3cf085d
+  schema: olm.bundle
+# v4.21.4 bundle
+- image: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle@sha256:18d6f26410eae6ee34617dce99af624eca9d770734086a3ee642d2724896c416
+  schema: olm.bundle
+# Deprecation notices for older bundles
+- entries:
+    - message: |
+        o-cloud-manager.v4.21.0 is deprecated. Uninstall and install o-cloud-manager.v0.1.0 or higher for support.
+      reference:
+        name: o-cloud-manager.v4.21.0
+        schema: olm.bundle
+    - message: |
+        o-cloud-manager.v4.21.1 is deprecated. Uninstall and install o-cloud-manager.v0.1.0 or higher for support.
+      reference:
+        name: o-cloud-manager.v4.21.1
+        schema: olm.bundle
+    - message: |
+        o-cloud-manager.v4.21.2 is deprecated. Uninstall and install o-cloud-manager.v0.1.0 or higher for support.
+      reference:
+        name: o-cloud-manager.v4.21.2
+        schema: olm.bundle
+    - message: |
+        o-cloud-manager.v4.21.3 is deprecated. Uninstall and install o-cloud-manager.v0.1.0 or higher for support.
+      reference:
+        name: o-cloud-manager.v4.21.3
+        schema: olm.bundle
+    - message: |
+        o-cloud-manager.v4.21.4 is deprecated. Uninstall and install o-cloud-manager.v0.1.0 or higher for support.
+      reference:
+        name: o-cloud-manager.v4.21.4
+        schema: olm.bundle
+  package: o-cloud-manager
+  schema: olm.deprecations
