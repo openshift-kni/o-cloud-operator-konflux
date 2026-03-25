@@ -6,9 +6,9 @@ metadata:
   name: catalog-idms
 spec:
   imageDigestMirrors:
-  - mirrors:
-    - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-0-1
-    - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-4-20
-    - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-4-21
-    - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-4-22
-    source: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle
+    - mirrors:
+        - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-0-1
+        - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-4-20
+        - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-4-21
+        - quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-4-22
+      source: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle
