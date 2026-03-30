@@ -15,8 +15,8 @@ metadata:
       (
         'bundles/v0.1/Dockerfile.bundle'.pathChanged() ||
         'bundles/v0.1/overlay/***'.pathChanged() ||
-        'bundles/v0.1/tekton/build-pipeline.yaml'.pathChanged() ||
-        'bundles/v0.1/tekton/o-cloud-manager-bundle-0-1-push.yaml'.pathChanged() ||
+        '.tekton/build-pipeline.yaml'.pathChanged() ||
+        '.tekton/o-cloud-manager-bundle-0-1-push.yaml'.pathChanged() ||
         'bundles/v0.1/oran-o2ims/bundle/***'.pathChanged() ||
         'telco5g-konflux'.pathChanged() ||
         'telco5g-konflux/***'.pathChanged()

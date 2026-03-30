@@ -15,6 +15,9 @@ metadata:
       !event_title.contains("[BRANCH-CUT]") &&
       (
         'catalog/4.20/***'.pathChanged() ||
+        '.tekton/fbc-pipeline-4-20.yaml'.pathChanged() ||
+        '.tekton/images-mirror-set-4-20.yaml'.pathChanged() ||
+        '.tekton/o-cloud-manager-fbc-4-20-pull-request.yaml'.pathChanged() ||
         'telco5g-konflux'.pathChanged() ||
         'telco5g-konflux/***'.pathChanged()
       )
@@ -45,7 +48,7 @@ spec:
     - name: additional-tags
       value: []
   pipelineRef:
-    name: fbc-pipeline
+    name: fbc-pipeline-4-20
   taskRunTemplate:
     serviceAccountName: build-pipeline-o-cloud-manager-fbc-4-20
   workspaces:

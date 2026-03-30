@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  name: fbc-pipeline
+  name: fbc-pipeline-4-22
 spec:
   description: |
     This pipeline is ideal for building and verifying [file-based catalogs](https://konflux-ci.dev/docs/end-to-end/building-olm/#building-the-file-based-catalog).
