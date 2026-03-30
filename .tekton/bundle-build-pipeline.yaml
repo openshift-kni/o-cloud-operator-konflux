@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  name: build-pipeline
+  name: bundle-build-pipeline
 spec:
   description: >
     This pipeline is ideal for building multi-arch container images from a Containerfile while maintaining trust after pipeline customization.

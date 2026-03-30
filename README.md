@@ -64,4 +64,4 @@ git submodule update --init --recursive
 
 1. **Bundle pipeline**: When the `oran-o2ims` submodule pointer is updated (via Renovate), the bundle Tekton pipeline builds a new bundle image applying the overlays from `bundles/v0.1/overlay/`.
 
-2. **Catalog pipeline**: When catalog templates or `.tekton/` files change, the FBC pipeline runs `telco5g-konflux/scripts/catalog/konflux-build-catalog-from-resources-template.sh` to assemble the modular template files into a single `catalog-template.in.yaml`, then builds the catalog index image with `opm`.
+2. **Catalog pipeline**: When catalog templates or appropriate `.tekton/` files change, the FBC pipeline runs `telco5g-konflux/scripts/catalog/konflux-build-catalog-from-resources-template.sh` to assemble the modular template files into a single `catalog-template.in.yaml`, then builds the catalog index image with `opm`.

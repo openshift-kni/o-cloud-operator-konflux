@@ -15,7 +15,7 @@ metadata:
       (
         'bundles/v0.1/Dockerfile.bundle'.pathChanged() ||
         'bundles/v0.1/overlay/***'.pathChanged() ||
-        '.tekton/build-pipeline.yaml'.pathChanged() ||
+        '.tekton/bundle-build-pipeline.yaml'.pathChanged() ||
         '.tekton/o-cloud-manager-bundle-0-1-push.yaml'.pathChanged() ||
         'bundles/v0.1/oran-o2ims/bundle/***'.pathChanged() ||
         'telco5g-konflux'.pathChanged() ||
@@ -63,7 +63,7 @@ spec:
       value:
         - name=openshift4/o-cloud-manager-operator-bundle
   pipelineRef:
-    name: build-pipeline
+    name: bundle-build-pipeline
   taskRunTemplate:
     serviceAccountName: build-pipeline-o-cloud-manager-bundle-0-1
   workspaces:
