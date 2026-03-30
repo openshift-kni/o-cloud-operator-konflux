@@ -44,8 +44,12 @@ spec:
       value: "true"
     - name: additional-tags
       value: ['latest']
+    - name: ocp-version
+      value: "4.22"
+    - name: ocp-version-dashed
+      value: "4-22"
   pipelineRef:
-    name: fbc-pipeline-4-22
+    name: fbc-pipeline
   taskRunTemplate:
     serviceAccountName: build-pipeline-o-cloud-manager-fbc-4-22
   workspaces:
