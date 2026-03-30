@@ -61,6 +61,8 @@ spec:
       value: "true"
     - name: additional-tags
       value: []
+    - name: operator-version
+      value: "0.1"
     - name: additional-labels
       value:
         - name=openshift4/o-cloud-manager-operator-bundle
