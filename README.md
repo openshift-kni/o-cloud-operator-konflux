@@ -6,25 +6,30 @@ Konflux build definitions for the O-Cloud Manager operator: bundles, FBC catalog
 
 ```
 .
+├── .tekton/                        # All Tekton pipelines (PAC discovery)
+│   ├── build-pipeline.yaml         # Shared bundle build pipeline
+│   ├── o-cloud-manager-bundle-0-1-{pull-request,push}.yaml
+│   ├── fbc-pipeline-4-{20,21,22}.yaml
+│   ├── images-mirror-set-4-{20,21,22}.yaml
+│   └── o-cloud-manager-fbc-4-{20,21,22}-{pull-request,push}.yaml
+│
 ├── bundles/                        # Operator bundle definitions
 │   ├── catalog-idms.yaml           # Shared IDMS for quay.io ↔ registry.redhat.io mapping
 │   └── v0.1/                       # Bundle version 0.1 (Tech Preview)
 │       ├── oran-o2ims/             # Git submodule → openshift-kni/oran-o2ims (main)
 │       ├── Dockerfile.bundle       # Bundle image build
 │       ├── metadata/               # Konflux-specific annotation overrides
-│       ├── overlay/                # Image pinning, mapping, and release overlays
-│       └── tekton/                 # Bundle build/push pipelines
+│       └── overlay/                # Image pinning, mapping, and release overlays
 │
 ├── catalog/                        # FBC (File-Based Catalog) definitions
 │   ├── fbc-images-resolvable-integration-test-idms.yaml
 │   ├── 4.20/                       # Catalog for OpenShift 4.20
 │   │   ├── Dockerfile.catalog
-│   │   ├── templates/              # Modular FBC template files
-│   │   │   ├── openshift-4-20-template.in.yaml
-│   │   │   ├── o-cloud-manager-fbc-base.yaml
-│   │   │   ├── o-cloud-manager-channel-0-1.yaml
-│   │   │   └── o-cloud-manager-deprecated-channels-4-20.yaml
-│   │   └── tekton/                 # Catalog build/push pipelines
+│   │   └── templates/              # Modular FBC template files
+│   │       ├── openshift-4-20-template.in.yaml
+│   │       ├── o-cloud-manager-fbc-base.yaml
+│   │       ├── o-cloud-manager-channel-0-1.yaml
+│   │       └── o-cloud-manager-deprecated-channels-4-20.yaml
 │   ├── 4.21/                       # Catalog for OpenShift 4.21
 │   └── 4.22/                       # Catalog for OpenShift 4.22
 │
@@ -59,4 +64,4 @@ git submodule update --init --recursive
 
 1. **Bundle pipeline**: When the `oran-o2ims` submodule pointer is updated (via Renovate), the bundle Tekton pipeline builds a new bundle image applying the overlays from `bundles/v0.1/overlay/`.
 
-2. **Catalog pipeline**: When catalog templates or tekton files change, the FBC pipeline runs `telco5g-konflux/scripts/catalog/konflux-build-catalog-from-resources-template.sh` to assemble the modular template files into a single `catalog-template.in.yaml`, then builds the catalog index image with `opm`.
+2. **Catalog pipeline**: When catalog templates or appropriate `.tekton/` files change, the FBC pipeline runs `telco5g-konflux/scripts/catalog/konflux-build-catalog-from-resources-template.sh` to assemble the modular template files into a single `catalog-template.in.yaml`, then builds the catalog index image with `opm`.

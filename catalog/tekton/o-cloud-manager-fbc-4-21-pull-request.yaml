@@ -14,20 +14,19 @@ metadata:
       target_branch == "main" &&
       !event_title.contains("[BRANCH-CUT]") &&
       (
-        'bundles/v0.1/Dockerfile.bundle'.pathChanged() ||
-        'bundles/v0.1/overlay/***'.pathChanged() ||
-        'bundles/v0.1/tekton/build-pipeline.yaml'.pathChanged() ||
-        'bundles/v0.1/tekton/o-cloud-manager-bundle-0-1-pull-request.yaml'.pathChanged() ||
-        'bundles/v0.1/oran-o2ims/bundle/***'.pathChanged() ||
+        'catalog/4.21/***'.pathChanged() ||
+        '.tekton/fbc-build-pipeline.yaml'.pathChanged() ||
+        '.tekton/images-mirror-set-4-21.yaml'.pathChanged() ||
+        '.tekton/o-cloud-manager-fbc-4-21-pull-request.yaml'.pathChanged() ||
         'telco5g-konflux'.pathChanged() ||
         'telco5g-konflux/***'.pathChanged()
       )
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: o-cloud-manager-0-1
-    appstudio.openshift.io/component: o-cloud-manager-bundle-0-1
+    appstudio.openshift.io/application: o-cloud-manager-fbc-4-21
+    appstudio.openshift.io/component: o-cloud-manager-fbc-4-21
     pipelines.appstudio.openshift.io/type: build
-  name: o-cloud-manager-bundle-0-1-on-pull-request
+  name: o-cloud-manager-fbc-4-21-on-pull-request
   namespace: telco-5g-tenant
 spec:
   params:
@@ -36,37 +35,26 @@ spec:
     - name: revision
       value: '{{revision}}'
     - name: output-image
-      value: quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-0-1:on-pr-{{revision}}
+      value: quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-fbc-4-21:on-pr-{{revision}}
     - name: image-expires-after
       value: 5d
     - name: build-platforms
       value:
         - linux/x86_64
     - name: dockerfile
-      value: bundles/v0.1/Dockerfile.bundle
+      value: catalog/4.21/Dockerfile.catalog
     - name: hermetic
-      value: "true"
-    - name: prefetch-input
-      value: ""
-    - name: build-source-image
-      value: "true"
-    - name: skip-preflight
-      value: "true"
-    - name: build-image-index
-      value: "false"
-    - name: image-append-platform
-      value: "false"
-    - name: skip-sast-coverity
       value: "true"
     - name: additional-tags
       value: []
-    - name: additional-labels
-      value:
-        - name=openshift4/o-cloud-manager-operator-bundle
+    - name: ocp-version
+      value: "4.21"
+    - name: ocp-version-dashed
+      value: "4-21"
   pipelineRef:
-    name: build-pipeline
+    name: fbc-build-pipeline
   taskRunTemplate:
-    serviceAccountName: build-pipeline-o-cloud-manager-bundle-0-1
+    serviceAccountName: build-pipeline-o-cloud-manager-fbc-4-21
   workspaces:
     - name: git-auth
       secret:

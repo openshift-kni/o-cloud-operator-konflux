@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  name: build-pipeline
+  name: bundle-build-pipeline
 spec:
   description: >
     This pipeline is ideal for building multi-arch container images from a Containerfile while maintaining trust after pipeline customization.
@@ -110,6 +110,10 @@ spec:
     - name: enable-cache-proxy
       default: 'false'
       description: Enable cache proxy configuration
+      type: string
+    - name: operator-version
+      default: '0.1'
+      description: Operator version used in image labels (CPE, release)
       type: string
   results:
     - description: ''
@@ -253,8 +257,8 @@ spec:
             - description=o-cloud-manager
             - distribution-scope=public
             - io.k8s.description=o-cloud-manager
-            - release=4.22
-            - cpe=cpe:/a:redhat:openshift:4.22::el9
+            - release=$(params.operator-version)
+            - cpe=cpe:/a:redhat:o_cloud_manager:$(params.operator-version)::el9
             - 'url=https://github.com/openshift-kni/oran-o2ims'
             - 'vendor=Red Hat, Inc.'
             - io.k8s.display-name=o-cloud-manager
