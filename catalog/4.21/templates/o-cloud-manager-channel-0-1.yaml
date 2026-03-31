@@ -6,5 +6,5 @@
   package: o-cloud-manager
   schema: olm.channel
 # v0.1.0 bundle
-- image: registry.redhat.io/openshift4/o-cloud-manager-operator-bundle@sha256:d403352abf14d6553da6665e47342927500608f2646cb17eac80414f44320ae0
+- image: quay.io/redhat-user-workloads/telco-5g-tenant/o-cloud-manager-bundle-0-1@sha256:83d39392c434e5baee6ca3de8313ce1b50bd7362be2fbf8cef22406cd57f6a5b414f44320ae0
   schema: olm.bundle
