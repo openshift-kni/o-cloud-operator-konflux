@@ -1,4 +1,8 @@
 ---
 extends: default
+ignore:
+  - telco5g-konflux/
+  - bundles/v0.1/oran-o2ims/
+  - bundles/v0.2/oran-o2ims/
 rules:
   line-length: disable
