@@ -12,8 +12,8 @@
                 "additionalBranchPrefix": "telco5g-konflux-",
                 "autoApprove": true,
                 "automerge": true,
-                "matchFileNames": [
-                    "telco5g-konflux/**"
+                "matchPackageNames": [
+                    "https://github.com/openshift-kni/telco5g-konflux.git"
                 ],
                 "schedule": [
                     "at any time"
@@ -26,8 +26,8 @@
                 "additionalBranchPrefix": "oran-o2ims-",
                 "autoApprove": true,
                 "automerge": true,
-                "matchFileNames": [
-                    "bundles/*/oran-o2ims/**"
+                "matchPackageNames": [
+                    "https://github.com/by2waysprojects/oran-o2ims.git"
                 ],
                 "schedule": [
                     "at any time"
