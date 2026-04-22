@@ -2,6 +2,19 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "automergeStrategy": "rebase",
     "automergeType": "pr",
+    "customManagers": [
+        {
+            "customType": "regex",
+            "datasourceTemplate": "docker",
+            "managerFilePatterns": [
+                "/bundles/.*Dockerfile\\.bundle$/"
+            ],
+            "matchStrings": [
+                "(?<depName>[\\w\\-\\.\\/]+):?(?<currentValue>[\\w\\-\\.]+)?@(?<currentDigest>sha256:[a-f0-9]+)"
+            ],
+            "versioningTemplate": "docker"
+        }
+    ],
     "git-submodules": {
         "enabled": true,
         "packageRules": [
@@ -45,8 +58,7 @@
             "enabled": true,
             "ignoreTests": false,
             "includePaths": [
-                "bundles/**",
-                "catalog/**"
+                "bundles/**"
             ],
             "matchManagers": [
                 "custom.regex"
